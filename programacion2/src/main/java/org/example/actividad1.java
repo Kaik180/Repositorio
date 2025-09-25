@@ -15,10 +15,10 @@ public class actividad1 {
         System.out.println("hola " + Nombre + ",bienvenido a " + Curso );
 
         System.out.println("introduce un numero");
-        int num1 = Entrada.nextInt();
+        long num1 = Entrada.nextLong();
         System.out.println("introduce otro numero");
-        int num2 = Entrada.nextInt();
-        int resultado = num1 + num2;
+        long num2 = Entrada.nextLong();
+        long resultado = num1 + num2;
         System.out.println("EL resultado es " + resultado );
 
 
