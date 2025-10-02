@@ -18,15 +18,16 @@ public class Practica_3 {
                     altura = teclado.nextInt();
                 }catch (Exception e){
                     System.out.println("Error de formato");
+                    return;
                 }
                 if ( altura>ALTURAMAX) {
                     alturareal=(altura-ALTURAMAX);
                     System.out.println("“ERROR DE LECTURA. BAJA DE LA BÁSCULA Y VUELVE A SUBIR");
-                } else if (0 < altura) {
+                } else if ( altura < REQUISITO) {
                     alturareal = (REQUISITO-altura);
 
                     System.out.println("no tienes una altura correcta, te faltan" + alturareal + "cm");
-                } else if (altura > REQUISITO){
+                } else if (0 < altura){
                     System.out.println("leyendo peso (kg)");
                     peso = teclado.nextInt();
                     final int PESOMIN = (altura*2/8);
