@@ -8,7 +8,6 @@ public class Practica_3 {
         int altura = 0;
         int alturareal= 0;
         int peso = 0;
-        final int PESOMIN = (altura*2/8);
         final int PESOMAX = 120;
         final int ALTURAMAX = 230;
         final int REQUISITO = 140;
@@ -22,15 +21,15 @@ public class Practica_3 {
                 }
                 if ( altura>ALTURAMAX) {
                     alturareal=(altura-ALTURAMAX);
-                    System.out.println("te pasas de altura p" + alturareal + "cm");
+                    System.out.println("“ERROR DE LECTURA. BAJA DE LA BÁSCULA Y VUELVE A SUBIR");
                 } else if (0 < altura) {
                     alturareal = (REQUISITO-altura);
 
                     System.out.println("no tienes una altura correcta, te faltan" + alturareal + "cm");
-                    return;
                 } else if (altura > REQUISITO){
                     System.out.println("leyendo peso (kg)");
                     peso = teclado.nextInt();
+                    final int PESOMIN = (altura*2/8);
                     if (peso > PESOMAX)  {
                         pesoreal = (peso-PESOMAX);
                         System.out.println("Lo siento. Sobre pasas el limite por" + pesoreal + "Kg");
@@ -44,7 +43,8 @@ public class Practica_3 {
                 }else {
                     System.out.println("“ERROR DE LECTURA. BAJA DE LA BÁSCULA Y VUELVE A SUBIR");
                     }
-
+                // En este codigo para hacer lo que se nos pide tenemos un if primero que con 2 else if y un else final los solo 1 es la opcion correcta
+                //de altura y dentro de este else if tiene otro if que hace lo mismo pero con el peso teniendo 3 else, 2 erroneos (te pasas de peso o te falta) y el peso correcto y termina
 
 
 
