@@ -76,7 +76,7 @@ public class practica1 {
                                     int suerte2= Integer.parseInt(parte_2);
                                     int suerte3= Integer.parseInt(parte_3);
                                     int suerte4= Integer.parseInt(parte_4);
-                                    int numerodesuerte = suerte1 + suerte2 + suerte3 + suerte4; //separamos el resultado de la suma en numeros para luego sumarlos y obtener el numero de lasuerte
+                                    int numerodesuerte = suerte1 + suerte2 + suerte3 + suerte4; //separamos el resultado de la suma en numeros para luego sumarlos y obtener el numero de la suerte
 
                                     System.out.println(resultado+ " = " + numero1 + " + " + numero2 + " + " +  numero3 );
 
