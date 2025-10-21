@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.time.LocalDateTime;
 
 public class practica3 {
-    public static void main(String[] args) {
+    public static void main() {
         Scanner teclado = new Scanner(System.in);
         final int ANYO_MINIMO = 1900;
         LocalDateTime fecha = LocalDateTime.now();
