@@ -10,14 +10,13 @@ public class Practica4 {
         System.out.print("> Introduce operando: ");
         double operando1;
         double op2=0;
-        double op2_p;
+        double op2_p = 0;
         double resultado = 0; //definir variables
 
         try {
             operando1 = Double.parseDouble(teclado.nextLine());
         } catch (NumberFormatException e) {
             System.out.println("Operando no válido.");
-            teclado.close();
             return;
         } //comprobar que me dan un numero y no una letra
 
@@ -31,7 +30,7 @@ public class Practica4 {
         System.out.print("Elige una operación: ");
 
         String operacion = teclado.nextLine();
-        if (operacion=="R"){
+        if (operacion.equals("R")){
 
         }else {
             try {
@@ -39,38 +38,38 @@ public class Practica4 {
                 op2_p = Double.parseDouble(teclado.nextLine());
             } catch (NumberFormatException e) {
                 System.out.println("Operando no válido.");
+                return;
             }
         }
 
         switch (operacion.toLowerCase()) {
             case "+": //caso donde quieres hacer una suma
                 System.out.print("> Introduce el segundo operando: ");
-                resultado = operando1 + op2;
-                System.out.printf("El resultado de"+ operando1+ " + "+  op2+ "= "+ resultado);
+                resultado = operando1 + op2_p;
+                System.out.printf("El resultado de"+ operando1+ " + "+  op2_p+ "= "+ resultado);
                 break;
 
             case "-": //caso donde quieres restar dos numeros
                 System.out.print("> Introduce el segundo operando: ");
-                resultado = operando1 - op2;
-                System.out.printf("El resultado de"+ operando1+ " - "+  op2+ "= "+ resultado);
+                resultado = operando1 - op2_p;
+                System.out.printf("El resultado de"+ operando1+ " - "+  op2_p+ "= "+ resultado);
                 break;
 
             case "x": //caso donde eliges una multiplicacion
                 System.out.print("> Introduce el segundo operando: ");
-                resultado = operando1 * op2;
-                System.out.printf("El resultado de"+ operando1+ " x "+  op2 +"= "+ resultado);
+                resultado = operando1 * op2_p;
+                System.out.printf("El resultado de"+ operando1+ " x "+  op2_p +"= "+ resultado);
                 break;
 
             case "/": //caso donde quieres una division
-                System.out.print("> Introduce el segundo operando: ");
 
-                if (op2 == 0) { //comprobacion de numero negativo
+                if ( op2_p== 0) { //comprobacion de numero negativo
                     System.out.println("Error: No se puede dividir entre cero.");
 
 
                 }else{
-                    resultado = operando1 / op2;
-                    System.out.printf("El resultado de"+ operando1+ " / "+  op2 +"= "+ resultado);
+                    resultado = operando1 /  op2_p;
+                    System.out.printf("El resultado de"+ operando1+ " / "+   op2_p +"= "+ resultado);
                 }
 
                 break;
