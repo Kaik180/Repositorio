@@ -8,6 +8,8 @@ public class Bateria_1 {
         Scanner teclado = new Scanner(System.in);
 
         String frase = "al palo JuanFran del atleti";
+        int posicion = frase.indexOf("palo");
+        System.out.println(posicion);
         int tamanyo = frase.length();
         System.out.println(tamanyo);
         System.out.println(frase.charAt(8));
@@ -15,8 +17,7 @@ public class Bateria_1 {
         String trozo_final = frase.substring(8,17);
         System.out.println(trozo_final);
 
-        int posicion = frase.indexOf("palo");
-        System.out.println(posicion);
+
 
         int posicion_ultima = frase.lastIndexOf("palo");
         System.out.println(posicion_ultima);

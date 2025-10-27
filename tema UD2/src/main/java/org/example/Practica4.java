@@ -29,8 +29,8 @@ public class Practica4 {
         System.out.println("--------------------------");
         System.out.print("Elige una operación: ");
 
-        String operacion = teclado.nextLine();
-        if (operacion.equals("R")){
+        String operacion = teclado.nextLine().toLowerCase();
+        if (operacion.equals("r")){
 
         }else {
             try {
