@@ -1,0 +1,125 @@
+import java.util.Scanner;
+
+public class practica_trazas {
+    static void main(){
+        Scanner teclado = new Scanner(System.in);
+        final int TAMANYO_FIJO= 10;
+        int suma = 0;
+        int numero10 = 0;
+        System.out.println("**** BIENVENIDO AL VALIDADOR ISBN *****");
+        System.out.println("--------------------------");
+        System.out.println("[1] -> Validar");
+        System.out.println("[2] -> Reparar");
+        System.out.println("[x] -> salir");
+        System.out.println("--------------------------");
+        System.out.print("Elige una operación: ");
+        String opcion = teclado.nextLine().toLowerCase();
+        String numero = teclado.nextLine();
+        int tamanyo = numero.length();
+        //validamos el tamaño del isbn
+        if (tamanyo==TAMANYO_FIJO){
+            System.out.print("ISBN Tamaño correcto");
+        }else {
+            System.out.print("ISBN Tamaño incorrecto");
+        }
+        switch (opcion.toLowerCase()) {
+            case "1":
+
+                for (int i = 10; i >= 1; i--) {
+                    // colocamos parte 1 y 2 para agarrar el espacio que queramos
+                    int parte1 =0;
+                    int parte2 =1;
+                    String trozo_10 = numero.substring(parte1,parte2);
+                    if (parte1==9){
+                        if (trozo_10!="x"){
+                            try {
+                                numero10 = Integer.parseInt(trozo_10);
+                            }catch (Exception e){
+                                System.out.println("Error: no se puede convertir a número, formato mal colocado (no coloques letras)");
+                                return;
+                            }
+                            suma += numero10*i;
+                        }else {
+                            suma+= 10;
+                        }
+                    }else {
+                        try {
+                            numero10 = Integer.parseInt(trozo_10);
+                        }catch (Exception e){
+                            System.out.println("Error: no se puede convertir a número, formato mal colocado (no coloques letras)");
+                            return;
+                        }
+                        suma += numero10*i;
+                    }
+                    parte1++;
+                    parte2++;
+
+                }
+                System.out.println("El numero final de Tu ISBN es "+ suma);
+
+                break;
+
+            case "2":
+                int posicion = numero.indexOf("?");
+
+                if (posicion == -1) {
+                    System.out.println(" Error: no se encontró '?' en el número.");
+                    return;
+                }
+
+                boolean encontrado = false;
+
+                // Probamos todos los posibles valores (0 a 10, 10 = X)
+                for (int posible = 0; posible <= 10; posible++) {
+                    String caracter = (posible == 10) ? "X" : Integer.toString(posible);
+
+                    String candidato = numero.substring(0, posicion) + caracter + numero.substring(posicion + 1);
+
+                    // Validamos el candidato
+                    int sumaCandidato = 0;
+                    boolean validoCandidato = true;
+
+                    for (int i = 0; i < 10; i++) {
+                        String trozo = candidato.substring(i, i + 1);
+                        int valor;
+
+                        if (trozo.equalsIgnoreCase("X")) {
+                            if (i == 9) {
+                                valor = 10;
+                            } else {
+                                validoCandidato = false;
+                                break;
+                            }
+                        } else if (trozo.compareTo("0") >= 0 && trozo.compareTo("9") <= 0) {
+                            valor = Integer.parseInt(trozo);
+                        } else {
+                            validoCandidato = false;
+                            break;
+                        }
+
+                        sumaCandidato += valor * (10 - i);
+                    }
+
+                    if (validoCandidato && sumaCandidato % 11 == 0) {
+                        System.out.println(" ISBN reparado correctamente: " + candidato);
+                        encontrado = true;
+                        break;
+                    }
+                }
+
+                if (!encontrado) {
+                    System.out.println(" No se encontró ningún dígito que haga el ISBN válido.");
+                }
+                break;
+
+            case "x":
+                System.out.print("Adios");
+                break;
+            default:
+                System.out.println("Operación no válida.");
+        }
+    }
+
+
+
+}
