@@ -30,7 +30,7 @@ public class practica_trazas {
                 for (int i = 10; i >= 1; i--) {
 
                     String trozo_10 = numero.substring(parte1,parte2);
-                        if (!trozo_10.equals("x")){
+                        if (!trozo_10.equals("X")){
                             try {
                                 numero10 = Integer.parseInt(trozo_10);
                             }catch (Exception e){
