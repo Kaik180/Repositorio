@@ -53,8 +53,33 @@ public class dados {
     }
 
         //Ejercicio4
+        // Longitud aleatoria entre 8 y 12
+            int longitud = random.nextInt(5) + 8; // (0–4) + 8 → 8–12
 
+            // Apartados de caracteres
+            String mayusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            String minusculas = "abcdefghijklmnopqrstuvwxyz";
+            String numeros = "0123456789";
+            String todos = mayusculas + minusculas + numeros;
+            contrasena = "";
 
+            // Primer carácter: una mayúscula
+            contrasena += mayusculas.charAt(random.nextInt(mayusculas.length()));
+
+            // Segundo carácter: una minúscula
+            contrasena += minusculas.charAt(random.nextInt(minusculas.length()));
+
+            // Tercer carácter: un número
+            contrasena += numeros.charAt(random.nextInt(numeros.length()));
+
+            // Resto de caracteres: aleatorios de todos los apartados
+            for (int i = 3; i < longitud; i++) {
+                contrasena += todos.charAt(random.nextInt(todos.length()));
+            }
+
+            // Mostramos resultado
+            System.out.println("Contraseña generada: " + contrasena);
+    
 
 
 
