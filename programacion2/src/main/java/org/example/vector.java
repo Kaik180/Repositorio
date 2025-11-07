@@ -69,11 +69,8 @@ public class vector {
         String palabras[] = {"espada","arma","juegos"};
         System.out.println("introduce una letra");
         char letra = teclado.next().charAt(0);
-        for (i=0; i< palabras.length;i++) {
-        if (letra == palabras[])
-        }
-
-
+        //for (i=0; i< palabras.length;i++) {
+        //if (letra == palabras[])
         }
 
 
@@ -83,4 +80,4 @@ public class vector {
 
     }
 
-}
+//}
