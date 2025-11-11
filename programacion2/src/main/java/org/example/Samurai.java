@@ -55,20 +55,31 @@ public class Samurai {
             }while (controlador==true);
         }
         int ronda = random.nextInt(7) + 1;
-        for (int x=0;x<=7;x++) {
-            if (equipo1[ronda] > equipo2[ronda]) {
-                System.out.println(equipo1[ronda] + " es mayor que " + equipo2[ronda]);
-            } else if (equipo1[ronda] < equipo2[ronda]) {
-                System.out.println(equipo1[ronda] + " es menor que " + equipo2[ronda]);
+        int puntuacion1= 0;
+        int puntuacion2= 0;
+        for (int x=0;x<=6;x++) {
+            if (equipo1[x] > equipo2[x]) {
+                System.out.println(equipo1[ronda] + " gana a " + equipo2[ronda]);
+                puntuacion1++;
+            } else if (equipo1[x] < equipo2[x]) {
+                System.out.println(equipo1[ronda] + " pierde contra " + equipo2[ronda]);
+                puntuacion2++;
             } else {
-                System.out.println(equipo1[ronda] + " es igual a " + equipo2[ronda]);
+                System.out.println(equipo1[ronda] + " empata " + equipo2[ronda]);
+                puntuacion1++;
+                puntuacion2++;
             }
 
             ronda++;
             if (ronda == 7) {
                 ronda = 0;
+            }else if (puntuacion1==4){
+                System.out.println("equipo 1 gana el combate");
+                return;
+            } else if (puntuacion2==4){
+                System.out.println("equipo 2 gana el combate");
+                return;
             }
-
 
 
         }
