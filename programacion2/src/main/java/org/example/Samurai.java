@@ -54,7 +54,7 @@ public class Samurai {
                 }
             }while (controlador==true);
         }
-        int ronda = random.nextInt(7) + 1;
+        int ronda = random.nextInt(6) + 1;
         int puntuacion1= 0;
         int puntuacion2= 0;
         for (int x=0;x<=6;x++) {
@@ -71,8 +71,11 @@ public class Samurai {
             }
 
             ronda++;
-            if (ronda == 7) {
+            if (ronda == 6) {
                 ronda = 0;
+            }else if (puntuacion2==4 || puntuacion1==4){
+                System.out.println("los dos equipos empatan");
+                return;
             }else if (puntuacion1==4){
                 System.out.println("equipo 1 gana el combate");
                 return;
