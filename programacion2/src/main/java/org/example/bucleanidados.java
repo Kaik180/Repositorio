@@ -9,7 +9,7 @@ public class bucleanidados {
             for (int j=10;j>=0;j--){
                 System.out.println("soy el interno con j = "+ j);
                 if (j==5){
-                    continue externo;
+                    continue;
 
                 }
                 System.out.println("hola"+ i + j);
@@ -18,3 +18,5 @@ public class bucleanidados {
 
     }
 }
+
+
